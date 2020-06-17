@@ -1,0 +1,30 @@
+{
+  "name": "Association12",
+  "fields": [
+    {
+      "fieldName": "identifiantconc",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "clientglentity",
+      "otherEntityRelationshipName": "association12",
+      "relationshipName": "id",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200617173619",
+  "entityTableName": "association_12",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}
