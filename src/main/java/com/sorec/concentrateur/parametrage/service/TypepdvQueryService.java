@@ -1,0 +1,112 @@
+package com.sorec.concentrateur.parametrage.service;
+
+import java.util.List;
+
+import javax.persistence.criteria.JoinType;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import io.github.jhipster.service.QueryService;
+
+import com.sorec.concentrateur.parametrage.domain.Typepdv;
+import com.sorec.concentrateur.parametrage.domain.*; // for static metamodels
+import com.sorec.concentrateur.parametrage.repository.TypepdvRepository;
+import com.sorec.concentrateur.parametrage.service.dto.TypepdvCriteria;
+import com.sorec.concentrateur.parametrage.service.dto.TypepdvDTO;
+import com.sorec.concentrateur.parametrage.service.mapper.TypepdvMapper;
+
+/**
+ * Service for executing complex queries for {@link Typepdv} entities in the database.
+ * The main input is a {@link TypepdvCriteria} which gets converted to {@link Specification},
+ * in a way that all the filters must apply.
+ * It returns a {@link List} of {@link TypepdvDTO} or a {@link Page} of {@link TypepdvDTO} which fulfills the criteria.
+ */
+@Service
+@Transactional(readOnly = true)
+public class TypepdvQueryService extends QueryService<Typepdv> {
+
+    private final Logger log = LoggerFactory.getLogger(TypepdvQueryService.class);
+
+    private final TypepdvRepository typepdvRepository;
+
+    private final TypepdvMapper typepdvMapper;
+
+    public TypepdvQueryService(TypepdvRepository typepdvRepository, TypepdvMapper typepdvMapper) {
+        this.typepdvRepository = typepdvRepository;
+        this.typepdvMapper = typepdvMapper;
+    }
+
+    /**
+     * Return a {@link List} of {@link TypepdvDTO} which matches the criteria from the database.
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @return the matching entities.
+     */
+    @Transactional(readOnly = true)
+    public List<TypepdvDTO> findByCriteria(TypepdvCriteria criteria) {
+        log.debug("find by criteria : {}", criteria);
+        final Specification<Typepdv> specification = createSpecification(criteria);
+        return typepdvMapper.toDto(typepdvRepository.findAll(specification));
+    }
+
+    /**
+     * Return a {@link Page} of {@link TypepdvDTO} which matches the criteria from the database.
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @param page The page, which should be returned.
+     * @return the matching entities.
+     */
+    @Transactional(readOnly = true)
+    public Page<TypepdvDTO> findByCriteria(TypepdvCriteria criteria, Pageable page) {
+        log.debug("find by criteria : {}, page: {}", criteria, page);
+        final Specification<Typepdv> specification = createSpecification(criteria);
+        return typepdvRepository.findAll(specification, page)
+            .map(typepdvMapper::toDto);
+    }
+
+    /**
+     * Return the number of matching entities in the database.
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @return the number of matching entities.
+     */
+    @Transactional(readOnly = true)
+    public long countByCriteria(TypepdvCriteria criteria) {
+        log.debug("count by criteria : {}", criteria);
+        final Specification<Typepdv> specification = createSpecification(criteria);
+        return typepdvRepository.count(specification);
+    }
+
+    /**
+     * Function to convert {@link TypepdvCriteria} to a {@link Specification}
+     * @param criteria The object which holds all the filters, which the entities should match.
+     * @return the matching {@link Specification} of the entity.
+     */
+    protected Specification<Typepdv> createSpecification(TypepdvCriteria criteria) {
+        Specification<Typepdv> specification = Specification.where(null);
+        if (criteria != null) {
+            if (criteria.getId() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getId(), Typepdv_.id));
+            }
+            if (criteria.getIdtypepdv() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getIdtypepdv(), Typepdv_.idtypepdv));
+            }
+            if (criteria.getReftypepdv() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getReftypepdv(), Typepdv_.reftypepdv));
+            }
+            if (criteria.getType() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getType(), Typepdv_.type));
+            }
+            if (criteria.getNbremaxterminaux() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getNbremaxterminaux(), Typepdv_.nbremaxterminaux));
+            }
+            if (criteria.getPlafondpostpaye() != null) {
+                specification = specification.and(buildRangeSpecification(criteria.getPlafondpostpaye(), Typepdv_.plafondpostpaye));
+            }
+        }
+        return specification;
+    }
+}

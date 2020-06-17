@@ -1,0 +1,32 @@
+{
+  "name": "Choisit",
+  "fields": [
+    {
+      "fieldName": "idproduit",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "attributaire",
+      "otherEntityRelationshipName": "choisit",
+      "relationshipValidateRules": "required",
+      "relationshipName": "idattributaire",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200617111450",
+  "entityTableName": "choisit",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}
