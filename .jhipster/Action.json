@@ -1,0 +1,57 @@
+{
+  "name": "Action",
+  "fields": [
+    {
+      "fieldName": "idaction",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "libelleaction",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "statutaction",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "codeaction",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "etape",
+      "otherEntityRelationshipName": "action",
+      "relationshipName": "idetape",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200617181754",
+  "entityTableName": "action",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}

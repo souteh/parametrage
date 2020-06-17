@@ -1,0 +1,49 @@
+{
+  "name": "Actionparam",
+  "fields": [
+    {
+      "fieldName": "idactionparam",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "libelleactionparam",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "codeactionparam",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "etapeparam",
+      "otherEntityRelationshipName": "actionparam",
+      "relationshipName": "idetapeparam",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200617181854",
+  "entityTableName": "actionparam",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}

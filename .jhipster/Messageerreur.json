@@ -1,0 +1,41 @@
+{
+  "name": "Messageerreur",
+  "fields": [
+    {
+      "fieldName": "idmessage",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "action",
+      "otherEntityRelationshipName": "messageerreur",
+      "relationshipName": "idaction",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200617182154",
+  "entityTableName": "messageerreur",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}
