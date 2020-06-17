@@ -1,0 +1,41 @@
+{
+  "name": "Typeterminal",
+  "fields": [
+    {
+      "fieldName": "idtypeterminal",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "codetypeterminal",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200617144256",
+  "entityTableName": "typeterminal",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}
