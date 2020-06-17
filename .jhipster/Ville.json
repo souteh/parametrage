@@ -1,0 +1,37 @@
+{
+  "name": "Ville",
+  "fields": [
+    {
+      "fieldName": "idville",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "designation",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "codeville",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": "254"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20200617144456",
+  "entityTableName": "ville",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "parametrage",
+  "applications": "*",
+  "microserviceName": "parametrage"
+}

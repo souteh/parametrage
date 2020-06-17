@@ -14,7 +14,27 @@
     <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617142856_added_entity_Agence.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617142956_added_entity_Alertemail.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143056_added_entity_Attributaire.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143156_added_entity_Choisit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143256_added_entity_Commandesensible.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143356_added_entity_Delaiannulation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143456_added_entity_Hypodrome.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143556_added_entity_I18nTextTranslation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143656_added_entity_Paiementlots.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143756_added_entity_Pays.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143856_added_entity_Pdv.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617143956_added_entity_Produit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144056_added_entity_Smtp.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144156_added_entity_Typepdv.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144256_added_entity_Typeterminal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144356_added_entity_Version.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144456_added_entity_Ville.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144556_added_entity_Voucher.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20200617143156_added_entity_constraints_Choisit.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200617144356_added_entity_constraints_Version.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>
